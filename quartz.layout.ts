@@ -8,8 +8,11 @@ export const sharedPageComponents: SharedLayout = {
   afterBody: [],
   footer: Component.Footer({
     links: {
-      GitHub: "https://github.com/jackyzha0/quartz",
-      "Discord Community": "https://discord.gg/cRFFHYye7t",
+      "联系我": "mailto:hi@email.011205.xyz",
+      "主页": "https://011205.xyz",
+      "博客": "https://blog.011205.xyz",
+      "Mastodon": "https://c7.io/@011205",
+      "GitHub": "https://github.com/Aleeyoo/Al-Link-yoo",
     },
   }),
 }
@@ -26,7 +29,7 @@ export const defaultContentPageLayout: PageLayout = {
     Component.TagList(),
   ],
   left: [
-    Component.PageTitle(),
+    // 移除原有的 PageTitle 以實現隱藏效果
     Component.MobileOnly(Component.Spacer()),
     Component.Flex({
       components: [
@@ -38,7 +41,9 @@ export const defaultContentPageLayout: PageLayout = {
         { Component: Component.ReaderMode() },
       ],
     }),
-    Component.Explorer(),
+    Component.Explorer({
+      title: "都是文档", // 將 Explorer 的標題改為網站內容
+    }),
   ],
   right: [
     Component.Graph(),
@@ -47,11 +52,10 @@ export const defaultContentPageLayout: PageLayout = {
   ],
 }
 
-// components for pages that display lists of pages  (e.g. tags or folders)
+// components for pages that display lists of pages (e.g. tags or folders)
 export const defaultListPageLayout: PageLayout = {
   beforeBody: [Component.Breadcrumbs(), Component.ArticleTitle(), Component.ContentMeta()],
   left: [
-    Component.PageTitle(),
     Component.MobileOnly(Component.Spacer()),
     Component.Flex({
       components: [
@@ -62,7 +66,6 @@ export const defaultListPageLayout: PageLayout = {
         { Component: Component.Darkmode() },
       ],
     }),
-    Component.Explorer(),
   ],
   right: [],
 }

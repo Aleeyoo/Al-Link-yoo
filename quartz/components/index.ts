@@ -51,3 +51,7 @@ export {
   Flex,
   ConditionalRender,
 }
+
+export function Html(arg0: string): import("./types").QuartzComponent {
+  throw new Error("Function not implemented.")
+}

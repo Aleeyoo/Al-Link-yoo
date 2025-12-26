@@ -18,7 +18,15 @@ export function getDate(cfg: GlobalConfiguration, data: QuartzPluginData): Date 
   return data.dates?.[cfg.defaultDateType]
 }
 
-export function formatDate(d: Date, locale: ValidLocale = "en-US"): string {
+export function formatDate(d: Date, locale: ValidLocale = "zh-CN"): string {
+  if (locale === "zh-CN") {
+    // 中文日期格式：年-月-日
+    const year = d.getFullYear()
+    const month = d.getMonth() + 1
+    const day = d.getDate()
+    return `${year}.${month}.${day}`
+  }
+  
   return d.toLocaleDateString(locale, {
     year: "numeric",
     month: "short",
