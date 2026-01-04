@@ -5,7 +5,9 @@ public
 prof
 tsconfig.tsbuildinfo
 .obsidian
+.trash
 .quartz-cache
 private/
 .replit
 replit.nix
+content/desktop.ini
