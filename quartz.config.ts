@@ -105,7 +105,7 @@ import * as Plugin from "./quartz/plugins"
  */
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "都是文档",
+    pageTitle: "Leeyoooo",
     pageTitleSuffix: " | Aleeyoo",
     enableSPA: true,
     enablePopovers: true,
